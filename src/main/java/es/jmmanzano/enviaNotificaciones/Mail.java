@@ -6,15 +6,17 @@ public class Mail {
     private String to;
     private String subject;
     private String content;
+    private String attachment;
 
     public Mail() {
     }
 
-    public Mail(String from, String to, String subject, String content) {
+    public Mail(String from, String to, String subject, String content, String attachment) {
         this.from = from;
         this.to = to;
         this.subject = subject;
         this.content = content;
+        this.setAttachment(attachment);
     }
 
     public String getFrom() {
@@ -58,4 +60,12 @@ public class Mail {
                 ", content='" + content + '\'' +
                 '}';
     }
+
+	public String getAttachment() {
+		return attachment;
+	}
+
+	public void setAttachment(String attachment) {
+		this.attachment = attachment;
+	}
 }

@@ -1,26 +1,30 @@
 package es.jmmanzano.enviaNotificaciones;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
-public class EnviaNotificacionesApplication implements ApplicationRunner {
-	@Autowired
-	PdfReader pdfReader;
-	
-	public static void main(String[] args) {
-		SpringApplication.run(EnviaNotificacionesApplication.class, args);
-		
-
-	}
-
-	@Override
-	public void run(ApplicationArguments args) throws Exception {
-		pdfReader.cargaFichero();
-		
-	}
+@Configuration
+@ComponentScan
+@EnableAutoConfiguration
+public class EnviaNotificacionesApplication {
+//	@Autowired
+//	PdfReader pdfReader;
+//	
+//	
+//	
+//	public static void main(String[] args) {
+////		SpringApplication.run(EnviaNotificacionesApplication.class, args);
+//		ConfigurableApplicationContext context = new SpringApplicationBuilder(EnviaNotificacionesApplication.class).headless(false).run(args);
+//	    Aplicacion appFrame = context.getBean(Aplicacion.class);
+//
+//	}
+//
+////	@Override
+////	public void run(ApplicationArguments args) throws Exception {
+//////		pdfReader.cargaFichero();
+////		Aplicacion.main(new String[0]);
+////		System.out.println("Hola");
+////	}
 
 }
